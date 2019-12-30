@@ -26,7 +26,8 @@ app.post('/',(req,res)=>{
                 errors: err
             });
         }
-
+        
+        //..............EL TOKEN( JSW ) Y ECRIPTADA SON COSAS DIFERENTES(bcrypt.hashSync(body.password, 10) usurR)...........//
         //email existente , verifiquemos el correo
        
         if( !bcrypt.compareSync( body.password, usurDB.password ) ){
@@ -38,11 +39,8 @@ app.post('/',(req,res)=>{
             
         }else
 
-        //creamos token:
+        //creamos token y lo mandamos estamos en login
         var tokencito = jwt.sign( {usuario:usurDB},SEED.SEED,{expiresIn:14400} )
-        
-
-
         res.status(500).json({
                 ok: true,
                 mensaje: 'con ese email ah tmb pass, econtrmo a este ',

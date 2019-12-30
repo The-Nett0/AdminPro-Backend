@@ -17,6 +17,11 @@ app.use(bodyParser.json()) //se ejecuten siempre si hay algo en el body esto lo 
 var appRoute = require('./Rutas/appR')
 var usuarioRuta = require('./Rutas/usuarioR')
 var loginRuta = require('./Rutas/Login')
+var hospitalRuta = require('./Rutas/hospitalR')
+var medicosRuta = require('./Rutas/medicoR')
+var uploadRuta = require('./Rutas/uploadR')
+var search = require('./Rutas/searchings')
+var pictureRuta = require('./Rutas/picturesR')
 
 //Conexiona la bas e de datos
 mongoose.connection.openUri( 'mongodb://localhost:27017/HospitalDB',( err,res )=>{
@@ -29,6 +34,11 @@ mongoose.connection.openUri( 'mongodb://localhost:27017/HospitalDB',( err,res )=
 //Esto es un midlware , e ejecuta antes que se otrass rutas '/' iual q antes
 app.use('/usuario',usuarioRuta)
 app.use('/login',loginRuta)
+app.use('/hospital',hospitalRuta)
+app.use('/medico',medicosRuta)
+app.use('/busqueda',search)
+app.use('/upload',uploadRuta)
+app.use('/picture',pictureRuta)
 
 app.use('/',appRoute)
 

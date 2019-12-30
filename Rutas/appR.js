@@ -9,4 +9,7 @@ app.get('/',(req,res,next)=>{
     });
 });
 
-module.exports = app; // exportando fuera de l ar chivo
+
+
+
+module.exports = app; // exportando fuera de l ar chivo 
