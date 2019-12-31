@@ -9,6 +9,7 @@ var usuariochema= new Schema({
 
     img:{ type:String,required:false},
     role:{ type:String,required:true,default:'admin' },
+    google:{ type:Boolean, default:false }
 
 })
 

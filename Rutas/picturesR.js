@@ -4,6 +4,19 @@ var fs = require('fs');
 var app = express();
 var path = require('path')
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 app.get('/:tipo/:img', (req, res, next) => {
 //ya veras como obtendfo el nombre exactio de esa imagen
     var tipo = req.params.tipo;
